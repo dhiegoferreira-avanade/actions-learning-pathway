@@ -1,3 +1,9 @@
 {
-  "extends": ["next", "next/core-web-vitals"]
+  "extends": "next/core-web-vitals",
+  "plugins": [],
+  "rules": {
+    // Customize ESLint rules here
+    // Example: Turn off prop-types if using TypeScript
+    "react/prop-types": "off"
+  }
 }
