@@ -1,0 +1,15 @@
+## Tamplated available on: https://github.com/marketplace?type=actions
+
+name: hello-world
+
+on: push # triggers can be (create, deployment, pish, release, status...) see more : https://docs.github.com/en/actions/writing-workflows/choosing-when-your-workflow-runs/events-that-trigger-workflows
+
+
+jobs: #
+    hello-world-job: ##jobs-name
+        runs-on: ubuntu-latest ## Gihub-hosted runners 
+        steps:
+            - name: check out repository code
+              uses: actions/checkout@v3 #imagine that you just need fecth the source folder, see more: https://github.com/actions/checkout
+            - run: echo "$(cat hello_world.txt)"
+
