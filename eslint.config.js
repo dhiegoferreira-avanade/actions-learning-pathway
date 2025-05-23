@@ -1,8 +1,16 @@
-import { defineConfig } from "eslint/config";
-import globals from "globals";
-import js from "@eslint/js";
-
-export default defineConfig([
-	{ files: ["**/*.js"], languageOptions: { globals: globals.browser } },
-	{ files: ["**/*.js"], plugins: { js }, extends: ["js/recommended"] },
-]);
+import js from '@eslint/js'
+import { FlatCompat } from '@eslint/eslintrc'
+ 
+const compat = new FlatCompat({
+  // import.meta.dirname is available after Node.js v20.11.0
+  baseDirectory: import.meta.dirname,
+  recommendedConfig: js.configs.recommended,
+})
+ 
+const eslintConfig = [
+  ...compat.config({
+    extends: ['eslint:recommended', 'next'],
+  }),
+]
+ 
+export default eslintConfig
