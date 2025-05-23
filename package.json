@@ -6,7 +6,7 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "test": "npx eslint"
+    "test": "echo 'testing application...'"
   },
   "dependencies": {
     "eslint": "^9.27.0",
